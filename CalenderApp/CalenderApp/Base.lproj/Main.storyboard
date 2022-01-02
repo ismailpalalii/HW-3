@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CalenderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="gsE-aN-6ad">
+                                <rect key="frame" x="0.0" y="76" width="414" height="31"/>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="tmh-AJ-m9L"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzv-xh-3mT">
+                                <rect key="frame" x="0.0" y="139" width="414" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mounth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-r0-V7e">
+                                <rect key="frame" x="0.0" y="207" width="414" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DY-jC-7Yx">
+                                <rect key="frame" x="0.0" y="275" width="414" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJ0-op-uhH">
+                                <rect key="frame" x="0.0" y="343" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPC-jg-O9Y" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="104" y="487" width="207" height="182"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="calendar"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FJ0-op-uhH" firstAttribute="top" secondItem="2DY-jC-7Yx" secondAttribute="bottom" constant="32" id="4Zi-nC-Wtc"/>
+                            <constraint firstItem="DPC-jg-O9Y" firstAttribute="top" secondItem="FJ0-op-uhH" secondAttribute="bottom" constant="128" id="AkE-5f-Yg8"/>
+                            <constraint firstItem="lzv-xh-3mT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EcE-xA-BYq"/>
+                            <constraint firstItem="2DY-jC-7Yx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GF7-ae-Qlh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fic-r0-V7e" secondAttribute="trailing" id="LxJ-EG-lVy"/>
+                            <constraint firstItem="DPC-jg-O9Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mlg-33-2os"/>
+                            <constraint firstItem="gsE-aN-6ad" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="NNS-Vy-TSD"/>
+                            <constraint firstItem="Fic-r0-V7e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oed-Db-cx7"/>
+                            <constraint firstItem="Fic-r0-V7e" firstAttribute="top" secondItem="lzv-xh-3mT" secondAttribute="bottom" constant="32" id="P2K-m8-J1J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2DY-jC-7Yx" secondAttribute="trailing" id="cG1-fC-CRR"/>
+                            <constraint firstItem="gsE-aN-6ad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ovd-Ve-djx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FJ0-op-uhH" secondAttribute="trailing" id="ptt-7B-tnC"/>
+                            <constraint firstItem="FJ0-op-uhH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="req-ve-0GK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lzv-xh-3mT" secondAttribute="trailing" id="wdB-XE-N63"/>
+                            <constraint firstItem="2DY-jC-7Yx" firstAttribute="top" secondItem="Fic-r0-V7e" secondAttribute="bottom" constant="32" id="we1-w2-enW"/>
+                            <constraint firstItem="lzv-xh-3mT" firstAttribute="top" secondItem="gsE-aN-6ad" secondAttribute="bottom" constant="32" id="yZM-87-kGG"/>
+                            <constraint firstItem="gsE-aN-6ad" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yxm-Bn-P6b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calenderAnimation" destination="DPC-jg-O9Y" id="2uk-G0-Hht"/>
+                        <outlet property="datePicker" destination="gsE-aN-6ad" id="BeG-cr-3FV"/>
+                        <outlet property="dateValue" destination="lzv-xh-3mT" id="sSR-Fo-7Ff"/>
+                        <outlet property="monthValue" destination="Fic-r0-V7e" id="Eqy-LR-m10"/>
+                        <outlet property="specialDate" destination="FJ0-op-uhH" id="peX-vJ-PLu"/>
+                        <outlet property="yearValue" destination="2DY-jC-7Yx" id="8pc-nc-8lW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301.44927536231887" y="37.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
