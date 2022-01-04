@@ -8,6 +8,33 @@
 import UIKit
 import Lottie
 
+extension Date {
+    func day(format: String = "dd", self: Self) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+    func month(format: String = "MM", self: Self) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+    func year(format: String = "yyyy", self: Self) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+    func dateAsPrettyString(format: String = "dd<>MM<>yyyy", self: Self) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var calenderAnimation: AnimationView!
@@ -26,21 +53,17 @@ class ViewController: UIViewController {
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         
         // Mark: Date Format Created
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy"
-        let year: String = dateFormatter.string(from: self.datePicker.date)
-        dateFormatter.dateFormat = "MM"
-        let month: String = dateFormatter.string(from: self.datePicker.date)
-        dateFormatter.dateFormat = "dd"
-        let day: String = dateFormatter.string(from: self.datePicker.date)
-        dateFormatter.dateFormat = "dd<>MM<>yyyy"
-        let special = dateFormatter.string(from: self.datePicker.date)
+        let dateFormatter = Date()
+        let day = dateFormatter.day( self: datePicker.date)
+        let month = dateFormatter.month( self: datePicker.date)
+        let year = dateFormatter.year( self: datePicker.date)
+        let prettyString = dateFormatter.dateAsPrettyString( self: datePicker.date)
         
-        // Mark: Date  Added
+        // Mark: Date  Added Label
         dateValue.text = "Day: \(day)"
         monthValue.text = "Month: \(month)"
         yearValue.text = "Year: \(year)"
-        specialDate.text = "Speacial Date: \(special)"
+        specialDate.text = "Pretty String: \(prettyString)"
         
     }
     
@@ -51,6 +74,5 @@ class ViewController: UIViewController {
         calenderAnimation.animationSpeed = 0.5
         calenderAnimation.play()
     }
-    
 }
 
