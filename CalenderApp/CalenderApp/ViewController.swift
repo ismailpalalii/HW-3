@@ -8,6 +8,7 @@
 import UIKit
 import Lottie
 
+// Mark: Created Date Extension
 extension Date {
     func day(format: String = "dd", self: Self) -> String {
         let formatter = DateFormatter()
